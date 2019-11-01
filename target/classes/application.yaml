@@ -1,0 +1,27 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8088
+spring:
+  resources:
+    static-locations: classpath:/static/,classpath:/db/,classpath:/templates/
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite::resource:static/db/adc.sqlite.demo.db
+    username:
+    password:
+
+mybatis:
+  mapperLocations: classpath:mapper/**/*.xml
+
+# 日志
+logging:
+  file:
+    path: logs/
+
+# fast json配置
+fastjson:
+  time-zone: GMT+8
+  date-format: yyyy-MM-dd HH:mm:ss
